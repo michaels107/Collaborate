@@ -2,10 +2,10 @@
 ### Ruby on Rails Project
 
 ### Roles
-* Overall Project Manager:
-* Coding Manager:
-* Testing Manager:
-* Documentation:
+* Overall Project Manager: Duytan Tran
+* Coding Manager: Sean Michaels
+* Testing Manager: Caroline Testing
+* Documentation: Reema Gupta
 
 ### Contributions
 Please list who did what for each part of the project.

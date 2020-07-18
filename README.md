@@ -4,7 +4,7 @@
 ### Roles
 * Overall Project Manager: Duytan Tran
 * Coding Manager: Sean Michaels
-* Testing Manager: Caroline Testing
+* Testing Manager: Caroline Wheeler
 * Documentation: Reema Gupta
 
 ### Contributions

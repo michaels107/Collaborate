@@ -2,10 +2,8 @@
 
 one:
   project_name: MyString
-  project_id: 1
   description: MyString
 
 two:
   project_name: MyString
-  project_id: 1
   description: MyString

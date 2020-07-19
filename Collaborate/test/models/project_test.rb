@@ -9,8 +9,8 @@ class ProjectTest < ActiveSupport::TestCase
   # Created 7/18/2020 by Duytan Tran
   # Initial valid form of a project formatted for insertion in Projects table
   def setup
-    @project = Project.new(project_name: 'Example Project',
-                           description: 'An example of a project in the project table')
+    @project = Project.new project_name: 'Example Project',
+                           description: 'An example of a project in the project table'
   end
 
   test 'should be valid' do

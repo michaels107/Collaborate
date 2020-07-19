@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 # Created 7/18/2020 by Duytan Tran
-# Validation rules for insertions into Project table
+# Validation rules for insertions into Professor table
 class Professor < ApplicationRecord
 
   belongs_to :account
-  validates :account_id, presence: true
+  validates :account_id, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validate :matching_email?
   validates :first_name, length: { maximum: 255 }

@@ -7,14 +7,13 @@ require 'test_helper'
 # Tests constraints imposed on Professors table
 class ProfessorTest < ActiveSupport::TestCase
   # Created 7/18/2020 by Duytan Tran
-  # Initial valid form of a project formatted for insertion in Projects table
+  # Initial valid form of a project formatted for insertion in Professors table
   def setup
     Account.new(email: 'testUser@gmail.com', password: 'password').save
-    @acc = Account.last
-    @professor = Professor.new(account_id: @acc.id,
-                               email: @acc.email,
+    @professor = Professor.new account_id: Account.last.id,
+                               email: Account.last.email,
                                first_name: 'Bob',
-                               last_name: 'Smith')
+                               last_name: 'Smith'
   end
 
   test 'should be valid' do

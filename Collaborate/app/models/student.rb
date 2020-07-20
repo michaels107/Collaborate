@@ -7,7 +7,7 @@ class Student < ApplicationRecord
   validates :student_email, presence: true, uniqueness: true
   validate :student_matching_email?
   validates :f_name, length: { maximum: 255 }, presence: true
-  validates :l_name, length: { maximum: 255 } , presence:true
+  validates :l_name, length: { maximum: 255 }, presence:true
   validates :dot_name, length: { maximum: 100 }, presence:true, uniqueness: true
   validates :rating, inclusion: "A".."F"
 

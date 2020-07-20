@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_19_015711) do
+ActiveRecord::Schema.define(version: 2020_07_19_231842) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2020_07_19_015711) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.integer "section_num"
+    t.string "course_name"
+    t.string "course_number"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_courses_on_project_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "group_name"
+    t.integer "num_of_teammates"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "peer_evaluations", force: :cascade do |t|
@@ -48,6 +65,18 @@ ActiveRecord::Schema.define(version: 2020_07_19_015711) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "dot_name"
+    t.string "f_name"
+    t.string "l_name"
+    t.string "rating"
+    t.string "student_email"
+    t.integer "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_students_on_account_id"
   end
 
 end

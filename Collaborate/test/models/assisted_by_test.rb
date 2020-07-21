@@ -8,7 +8,6 @@ class AssistedByTest < ActiveSupport::TestCase
   def setup
     Account.new(email:'bob@gmail.com', password:'password').save
     Professor.new(account_id: Account.last.id,
-                  email: 'smichaels@gmail.com',
                   first_name: 'Bobby',
                   last_name: 'Fisher').save
     Account.new(email:'jerry@gmail.com', password:'password').save

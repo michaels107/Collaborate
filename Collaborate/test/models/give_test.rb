@@ -8,7 +8,6 @@ class GiveTest < ActiveSupport::TestCase
     Account.new(email:'bob@gmail.com', password:'password').save
     Project.new(project_name:'something', description:'something').save
     Student.new(account_id: Account.last.id,
-                student_email: Account.last.email,
                 f_name: 'Sean',
                 l_name: 'Michaels',
                 dot_name:'michaels.107',

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_21_211733) do
+ActiveRecord::Schema.define(version: 2020_07_21_221355) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 2020_07_21_211733) do
 
   create_table "professors", force: :cascade do |t|
     t.integer "account_id"
-    t.string "email"
     t.string "first_name"
     t.string "last_name"
     t.datetime "created_at", null: false
@@ -108,7 +107,6 @@ ActiveRecord::Schema.define(version: 2020_07_21_211733) do
     t.string "f_name"
     t.string "l_name"
     t.string "rating"
-    t.string "student_email"
     t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

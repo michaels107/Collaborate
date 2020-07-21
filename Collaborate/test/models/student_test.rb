@@ -1,6 +1,7 @@
 require 'test_helper'
 
 # Created 7/20/2020 by Reema Gupta
+# Edited 7/21/2020 by Duytan Tran: removed email from @student
 # Testing for Student table data manipulation
 class StudentTest < ActiveSupport::TestCase
   # test "the truth" do
@@ -11,8 +12,7 @@ class StudentTest < ActiveSupport::TestCase
     # Created 7/20/2020 by Reema Gupta
     # Initial valid form of a project formatted for insertion in Student table
     Account.new(email: 'testStudent@gmail.com', password: 'pass1234').save
-    @student= Student.new account_id: Account.last.id,
-                           student_email: Account.last.email,
+    @student = Student.new account_id: Account.last.id,
                                f_name: 'kavya',
                                l_name: 'Khan',
                                dot_name:'khan.121',
@@ -34,17 +34,6 @@ class StudentTest < ActiveSupport::TestCase
   end
   test 'account_id should exist in accounts' do
     @student.account_id = -2
-    assert_not @student.valid?
-  end
-
-  # student email constraints testing
-  test 'email should be present' do
-    @student.student_email = '    '
-    assert_not @student.valid?
-  end
-
-  test 'email should not be nil' do
-    @student.student_email = nil
     assert_not @student.valid?
   end
 

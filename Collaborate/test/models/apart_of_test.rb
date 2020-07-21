@@ -7,7 +7,6 @@ class ApartOfTest < ActiveSupport::TestCase
   def setup
     Account.new(email:'bob@gmail.com', password:'password').save
     Student.new(account_id: Account.last.id,
-                student_email: 'smichaels@gmail.com',
                 f_name: 'Sean',
                 l_name: 'Michaels',
                 dot_name:'michaels.107',

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # Created 7/18/2020 by Duytan Tran
+# Edited 7/21/2020 by Duytan: removed email from @professor
 # Testing for Professors table data manipulation
 require 'test_helper'
 
@@ -11,7 +12,6 @@ class ProfessorTest < ActiveSupport::TestCase
   def setup
     Account.new(email: 'testUser@gmail.com', password: 'password').save
     @professor = Professor.new account_id: Account.last.id,
-                               email: Account.last.email,
                                first_name: 'Bob',
                                last_name: 'Smith'
   end
@@ -33,17 +33,6 @@ class ProfessorTest < ActiveSupport::TestCase
 
   test 'account_id should exist in accounts' do
     @professor.account_id = -2
-    assert_not @professor.valid?
-  end
-
-  # email constraints testing
-  test 'email should be present' do
-    @professor.email = '    '
-    assert_not @professor.valid?
-  end
-
-  test 'email should not be nil' do
-    @professor.email = nil
     assert_not @professor.valid?
   end
 

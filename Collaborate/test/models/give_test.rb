@@ -5,15 +5,17 @@ require 'test_helper'
 class GiveTest < ActiveSupport::TestCase
   #Test Setups
   def setup
-    Student.new(account_id: 500,
-                student_email: 'smichaels@gmail.com',
+    Account.new(email:'bob@gmail.com', password:'password').save
+    Project.new(project_name:'something', description:'something').save
+    Student.new(account_id: Account.last.id,
+                student_email: Account.last.email,
                 f_name: 'Sean',
                 l_name: 'Michaels',
                 dot_name:'michaels.107',
                 rating:'A').save
     PeerEvaluation.new(project_role: 'leader',
                        content: 'leader 1',
-                       project_id: 1).save
+                       project_id: Project.last.id).save
     @Give = Give.new student_id: Student.last.id, peer_evaluation_id: PeerEvaluation.last.id
 
   end

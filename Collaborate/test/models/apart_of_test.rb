@@ -5,7 +5,8 @@ require 'test_helper'
 class ApartOfTest < ActiveSupport::TestCase
   #Test Setups
   def setup
-    Student.new(account_id: 500,
+    Account.new(email:'bob@gmail.com', password:'password').save
+    Student.new(account_id: Account.last.id,
                 student_email: 'smichaels@gmail.com',
                 f_name: 'Sean',
                 l_name: 'Michaels',

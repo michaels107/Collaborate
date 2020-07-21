@@ -1,31 +1,34 @@
 # Created 7/19/2020 by Sean Michaels
+# Edited 7/21/2020 by Duytan: fixed setup
 # Testing for AssistedBy table data manipulation
 require 'test_helper'
 
 class AssistedByTest < ActiveSupport::TestCase
   #Test Setups
   def setup
-    Professor.new(account_id: 400,
+    Account.new(email:'bob@gmail.com', password:'password').save
+    Professor.new(account_id: Account.last.id,
                   email: 'smichaels@gmail.com',
                   first_name: 'Bobby',
                   last_name: 'Fisher').save
-    TA.new(email: 'Quaranteamtestemail@gmail.com', first_name: 'Donald',
-        last_name: 'Glover').save
-    @AssistedBy = AssistedBy.new professor_id: Professor.last.id, ta_id: TA.last.id
+    Account.new(email:'jerry@gmail.com', password:'password').save
+    Ta.new(account_id: Account.last.id, f_name: 'Donald',
+           l_name: 'Glover').save
+    @AssistedBy = AssistedBy.new professor_id: Professor.last.id, ta_id: Ta.last.id
 
   end
 
   test 'validity' do
-    assert @ApartOf.valid?
+    assert @AssistedBy.valid?
   end
 
   test 'valid professor' do
-    @ApartOf.professor_id = -2
-    assert_not @ApartOf.valid?
+    @AssistedBy.professor_id = -2
+    assert_not @AssistedBy.valid?
   end
 
   test 'valid peer' do
-    @ApartOf.ta_id = -2
-    assert_not @ApartOf.valid?
+    @AssistedBy.ta_id = -2
+    assert_not @AssistedBy.valid?
   end
 end

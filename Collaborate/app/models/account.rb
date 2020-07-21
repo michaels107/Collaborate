@@ -9,4 +9,5 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :professors
   has_many :students
+  has_many :tas
 end

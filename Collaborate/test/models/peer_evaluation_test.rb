@@ -9,9 +9,18 @@ class PeerEvaluationTest < ActiveSupport::TestCase
   # Initial valid form of a peer evaluation formatted for insertion in PeerEvaluations table
   def setup
     Project.new(project_name: 'P1: Something', description: 'Does something').save
+    Account.new(email:'bob@gmail.com', password:'password').save
+    Group.new(group_name:'Quaranteam', num_of_teammates:'4').save
+    Student.new(account_id: Account.last.id,
+                f_name: 'Sean',
+                l_name: 'Michaels',
+                dot_name:'michaels.107',
+                rating:'A').save
     @peer_eval = PeerEvaluation.new project_role: 'Useless',
                                     content: 'Very bad',
-                                    project_id: Project.last.id
+                                    project_id: Project.last.id,
+                                    group_id: Group.last.id,
+                                    student_id: Student.last.id
   end
 
   test 'should be valid' do

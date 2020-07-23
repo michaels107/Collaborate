@@ -1,0 +1,15 @@
+<!-- Created 7/22/2020 by Duytan Tran
+     HTML for new courses added by a professor-->
+<%= form_with model: @course, url: professor_create_path do |f| %>
+  <p>Section Number</p>
+  <%= f.number_field :section_num %>
+  <br>
+  <p>Course Name</p>
+  <%= f.text_field :course_name %>
+  <br>
+  <p>Course Number</p>
+  <%= f.number_field :course_number %>
+  <%= f.submit "Create" %>
+<% end %>
+
+<%= link_to 'cancel', professor_index_path, method: :get %>

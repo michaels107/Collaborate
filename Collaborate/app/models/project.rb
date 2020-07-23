@@ -7,4 +7,5 @@ class Project < ApplicationRecord
                            length: { maximum: 100 }
   validates :description, length: { maximum: 255 }
   has_many :peer_evaluations
+  belongs_to :course
 end

@@ -1,0 +1,15 @@
+<!-- Created 7/22/2020 by Duytan Tran
+     HTML for displaying courses associated with a professor-->
+<table>
+  <th>Section Number</th>
+  <th>Course Name</th>
+  <th>Course Number</th>
+  <% @taught_courses.each do |course| %>
+    <tr>
+      <td><%= course.section_num %></td>
+      <td><%= course.course_name %></td>
+      <td><%= course.course_number %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'new course', professor_new_path, method: :get %>

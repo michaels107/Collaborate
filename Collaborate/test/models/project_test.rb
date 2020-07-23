@@ -9,8 +9,10 @@ class ProjectTest < ActiveSupport::TestCase
   # Created 7/18/2020 by Duytan Tran
   # Initial valid form of a project formatted for insertion in Projects table
   def setup
+    Course.new(section_num: 43234, course_name: 'data', course_number: 1337).save
     @project = Project.new project_name: 'Example Project',
-                           description: 'An example of a project in the project table'
+                           description: 'An example of a project in the project table',
+                           course_id: Course.last.id
   end
 
   test 'should be valid' do

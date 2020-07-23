@@ -5,5 +5,4 @@
 class TaughtBy < ApplicationRecord
   belongs_to :professor
   belongs_to :course
-  validates :id, presence: true, uniqueness: true
 end

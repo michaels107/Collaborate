@@ -1,5 +1,6 @@
 require 'test_helper'
 # Created 7/20/2020 by Reema Gupta
+# Edited 7/22/2020 by Duytan Tran: removed constraints testing for project_id
 # Testing for Course table data manipulation
 class CourseTest < ActiveSupport::TestCase
   # test "the truth" do
@@ -8,9 +9,7 @@ class CourseTest < ActiveSupport::TestCase
   # Created 7/20/2020 by Reema Gupta
   # Initial valid form of a project formatted for insertion in Course table
   def setup
-    Project.new(project_name: 'Project_1', description: 'Do something').save
-    @course= Course.new project_id: Project.last.id,
-                         section_num: 324567,
+    @course = Course.new section_num: 324567,
                          course_name: 'Web Applications',
                          course_number:'CSE 3901'
   end
@@ -32,16 +31,5 @@ class CourseTest < ActiveSupport::TestCase
     @course.course_name = nil
     assert_not @course.valid?
   end
-  # project_id constraints testing
-  test 'project_id should be present' do
-    @course.project_id = '         '
-    assert_not @course.valid?
-  end
-
-  test 'project_id should exist' do
-    @course.project_id = -2
-    assert_not @course.valid?
-  end
-
 
 end

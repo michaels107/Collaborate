@@ -8,7 +8,8 @@ class PeerEvaluationTest < ActiveSupport::TestCase
   # Created 7/18/2020 by Duytan Tran
   # Initial valid form of a peer evaluation formatted for insertion in PeerEvaluations table
   def setup
-    Project.new(project_name: 'P1: Something', description: 'Does something').save
+    Course.new(section_num: 43234, course_name: 'data', course_number: 1337).save
+    Project.new(project_name: 'P1: Something', description: 'Does something', course_id: Course.last.id).save
     Account.new(email:'bob@gmail.com', password:'password').save
     Group.new(group_name:'Quaranteam', num_of_teammates:'4').save
     Student.new(account_id: Account.last.id,

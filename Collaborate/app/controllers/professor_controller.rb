@@ -1,4 +1,5 @@
 # Created 7/22/2020 by Duytan Tran
+# Edited 7/23/2020 by Duytan Tran: implemented destroy
 # Controller for the professor page for a particular professor who is logged in
 class ProfessorController < ApplicationController
 
@@ -29,7 +30,16 @@ class ProfessorController < ApplicationController
   def edit
   end
 
+  # Created 7/23/2020 by Duytan Tran
+  # Deletes the desired course from the Course and TaughtBy tables
   def destroy
+    @course = Course.find(params[:id])
+    if @course.present?
+      @taught_course = TaughtBy.find_by(course_id: @course.id)
+      @taught_course.destroy if @taught_course.present?
+      @course.destroy
+    end
+    redirect_to professor_index_path
   end
 
   def projects

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_22_225239) do
+ActiveRecord::Schema.define(version: 2020_07_24_032155) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,15 +31,6 @@ ActiveRecord::Schema.define(version: 2020_07_22_225239) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_apart_ofs_on_group_id"
     t.index ["student_id"], name: "index_apart_ofs_on_student_id"
-  end
-
-  create_table "assisted_bies", force: :cascade do |t|
-    t.integer "professor_id"
-    t.integer "ta_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["professor_id"], name: "index_assisted_bies_on_professor_id"
-    t.index ["ta_id"], name: "index_assisted_bies_on_ta_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -115,15 +106,6 @@ ActiveRecord::Schema.define(version: 2020_07_22_225239) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_students_on_account_id"
-  end
-
-  create_table "ta", force: :cascade do |t|
-    t.integer "account_id"
-    t.string "f_name"
-    t.string "l_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_ta_on_account_id"
   end
 
   create_table "taught_bies", force: :cascade do |t|

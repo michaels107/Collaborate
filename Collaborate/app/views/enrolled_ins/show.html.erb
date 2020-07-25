@@ -1,0 +1,28 @@
+<!-- Created 7/25/2020 by Duytan Tran
+     HTML for displaying enrolled students in a particular course-->
+<h1>Enrollment for: <%= "(#{@course.section_num}) #{@course.course_name} #{@course.course_number}" %></h1>
+<table>
+  <th>Username</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Rating</th>
+  <% @enrolled.each do |student| %>
+    <tr>
+      <td><%= student.dot_name %></td>
+      <td><%= student.f_name %></td>
+      <td><%= student.l_name %></td>
+      <td><%= student.rating %></td>
+      <td>
+        <%= link_to 'Drop', enrolled_in_path(student_id: student.id, course_id: @course.id),
+                    :method => :delete, data: { confirm: "Are you sure you want to drop: " +
+                        "#{student.f_name.downcase.capitalize} #{student.dot_name.downcase.capitalize} from" +
+                        "#{@course.course_name} #{@course.course_number} section #{@course.section_num}?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= form_with do |f| %>
+  <p>Enroll a student (name.number):</p>
+  <%= f.text_field :dot_name %>
+  <%= f.submit 'Enroll'%>
+<% end %>

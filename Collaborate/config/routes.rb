@@ -2,10 +2,16 @@
 # Edited 7/22/2020 by Duytan Tran: routing for professor pages
 # Edited 7/23/2020 by Duytan Tran: added routing for destroying professor courses
 # Edited 7/24/2020 by Duytan Tran: Reimplemented professor routes into courses
+# Edited 7/25/2020 by Duytan Tran: added enrolled in routes
 # Routes for Collaborate peer evaluation application
 Rails.application.routes.draw do
   # Courses page routes
   resources :courses
+
+  # Enrolled page routes
+  resources :enrolled_ins, except: [:show]
+  get 'enrolled_ins/:id', to: 'courses#view_enrolled'
+  post 'enrolled_ins/:id', to: 'enrolled_ins#enroll_student'
 
   # Home page routes
   resources :accounts

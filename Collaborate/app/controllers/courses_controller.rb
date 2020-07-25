@@ -1,6 +1,7 @@
 # Created 7/22/2020 by Duytan Tran
 # Edited 7/23/2020 by Duytan Tran: implemented destroy
-# Controller for the professor page for a particular professor who is logged in
+# Edited 7/25/2020 by Duytan Tran: Converted to CoursesController, implemented edit/update
+# Controller for the course page for a particular professor who is logged in
 class CoursesController < ApplicationController
   # Created 7/22/2020 by Duytan Tran
   # Displays all courses currently associated with logged in professor
@@ -36,5 +37,17 @@ class CoursesController < ApplicationController
       @course.destroy
     end
     redirect_to courses_path
+  end
+
+  # Created 7/25/2020 by Duytan Tran
+  # Prepare edits page
+  def edit
+    @course = Course.find(params[:id])
+  end
+
+  def update
+    params.permit!
+    @course = Course.find(params[:id])
+    redirect_to courses_path if @course.update(params[:course])
   end
 end

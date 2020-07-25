@@ -1,6 +1,9 @@
 <!-- Created 7/22/2020 by Duytan Tran
+     Edited 7/25/2020 by Duytan Tran: changes submit button text if update or create
      HTML form partial for editing and creating courses for professors-->
 <%= form_with model: course do |f| %>
+  <% submit_type = "Create" %>
+  <% submit_type = "Update" if Course.exists? id: course[:id] %>
   <p>Section Number</p>
   <%= f.number_field :section_num %>
   <br>
@@ -9,7 +12,7 @@
   <br>
   <p>Course Number</p>
   <%= f.number_field :course_number %>
-  <%= f.submit "Create" %>
+  <%= f.submit submit_type %>
 <% end %>
 
 <%= link_to 'cancel', courses_path, method: :get %>

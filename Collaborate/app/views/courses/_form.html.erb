@@ -1,6 +1,6 @@
 <!-- Created 7/22/2020 by Duytan Tran
-     HTML for new courses added by a professor-->
-<%= form_with model: @course, url: professor_create_path do |f| %>
+     HTML form partial for editing and creating courses for professors-->
+<%= form_with model: course do |f| %>
   <p>Section Number</p>
   <%= f.number_field :section_num %>
   <br>
@@ -12,4 +12,4 @@
   <%= f.submit "Create" %>
 <% end %>
 
-<%= link_to 'cancel', professor_index_path, method: :get %>
+<%= link_to 'cancel', courses_path, method: :get %>

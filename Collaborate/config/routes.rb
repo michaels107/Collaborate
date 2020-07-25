@@ -5,14 +5,9 @@
 Rails.application.routes.draw do
   # Professor Page Routes
   resources :courses
-  resources :taught_bies
-  resources :accounts
-  get 'professor/index'
-  post 'courses/:id', to: 'professor#destroy'
-  get 'professor/new'
-  post 'professor/create'
 
   # Home page routes
+  resources :accounts
   devise_for :accounts
 
   devise_scope :account do

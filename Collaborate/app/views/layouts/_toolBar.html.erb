@@ -5,7 +5,7 @@
   <% if current_account %>
     <%= link_to 'sign out', destroy_account_session_path, method: :delete %>
     <% if Professor.exists? account_id: current_account.id %>
-      <%= link_to 'view courses', professor_index_path, method: :get %>
+      <%= link_to 'view courses', courses_path, method: :get %>
     <% end %>
   <% else %>
     <%= link_to 'sign up', new_account_registration_path %>

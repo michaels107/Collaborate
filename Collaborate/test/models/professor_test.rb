@@ -12,8 +12,8 @@ class ProfessorTest < ActiveSupport::TestCase
   def setup
     Account.new(email: 'testUser@gmail.com', password: 'password').save
     @professor = Professor.new account_id: Account.last.id,
-                               first_name: 'Bob',
-                               last_name: 'Smith'
+                               f_name: 'Bob',
+                               l_name: 'Smith'
   end
 
   test 'should be valid' do
@@ -36,15 +36,15 @@ class ProfessorTest < ActiveSupport::TestCase
     assert_not @professor.valid?
   end
 
-  # first_name constraints testing
-  test 'first_name should not exceed 255 characters' do
-    @professor.first_name = 'a' * 256
+  # f_name constraints testing
+  test 'f_name should not exceed 255 characters' do
+    @professor.f_name = 'a' * 256
     assert_not @professor.valid?
   end
 
-  # last_name constraints testing
-  test 'last_name should not exceed 255 characters' do
-    @professor.first_name = 'a' * 256
+  # f_name constraints testing
+  test 'l_name should not exceed 255 characters' do
+    @professor.l_name = 'a' * 256
     assert_not @professor.valid?
   end
 

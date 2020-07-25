@@ -1,0 +1,14 @@
+<!-- Created 7/25/2020 by Duytan Tran
+     HTML form partial for editing and creating projects for a particular course-->
+<%= form_with model: project do |f| %>
+  <% submit_type = "Create" %>
+  <% submit_type = "Update" if Project.exists? id: project[:id] %>
+  <p>Project Name:</p>
+  <%= f.text_field :project_name %>
+  <br>
+  <p>Description:</p>
+  <%= f.text_area :description %>
+  <br>
+  <%= f.hidden_field :course_id, value: project.course_id  %>
+  <%= f.submit submit_type %>
+<% end %>

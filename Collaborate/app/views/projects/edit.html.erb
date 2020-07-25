@@ -1,0 +1,4 @@
+<!-- Created 7/25/2020 by Duytan Tran
+     HTML for editing projects associated to a course-->
+<%= render 'form', project: @project %>
+<%= link_to 'cancel', project_path(params[:course_id]), method: :get %>

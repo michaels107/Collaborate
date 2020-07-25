@@ -38,6 +38,8 @@ class CoursesController < ApplicationController
       taught_course.destroy if taught_course.present?
       enrolled = EnrolledIn.where course_id: @course.id
       enrolled.destroy_all if enrolled.present?
+      projects = Project.where course_id: @course.id
+      projects.destroy_all if projects.present?
       @course.destroy
     end
     redirect_to courses_path
@@ -64,5 +66,13 @@ class CoursesController < ApplicationController
     @enrolled = Student.where id: student_ids
     @course = Course.find(params[:id])
     render 'enrolled_ins/show'
+  end
+
+  # Created 7/25/2020 by Duytan Tran
+  # Prepares view for projects in a particular course
+  def view_projects
+    @projects = Project.where(course_id: params[:id])
+    @course = Course.find(params[:id])
+    render 'projects/show'
   end
 end

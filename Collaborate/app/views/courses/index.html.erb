@@ -1,5 +1,6 @@
 <!-- Created 7/22/2020 by Duytan Tran
      Edited 7/23/2020 by Duytan Tran: added delete course button
+     Edited 7/25/2020 by Duytan Tran: added Enrollment and Project buttons
      HTML for displaying courses associated with a professor-->
 <h1><%= "Professor #{@professor.f_name.downcase.capitalize} #{@professor.l_name.downcase.capitalize}'s Courses" %></h1>
 <table>
@@ -11,7 +12,8 @@
       <td><%= course.section_num %></td>
       <td><%= course.course_name %></td>
       <td><%= course.course_number %></td>
-      <td><%= link_to 'Enrolled', enrolled_in_path(course) %></td>
+      <td><%= link_to 'Enrollment', enrolled_in_path(course) %></td>
+      <td><%= link_to 'Projects', project_path(course) %></td>
       <td><%= link_to 'Edit', edit_course_path(course) %></td>
       <td><%= link_to 'Delete', course, method: :delete, data: { confirm: "Are you sure you want to delete: " +
           "(#{course.section_num}) #{course.course_name} #{course.course_number}?" } %></td>

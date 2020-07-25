@@ -1,0 +1,21 @@
+<!-- Created 7/25/2020 by Duytan Tran
+     HTML for displaying projects associated with a particular course-->
+<h1>Projects for: <%= "(#{@course.section_num}) #{@course.course_name} #{@course.course_number}" %></h1>
+<table>
+  <th>Project Name</th>
+  <th>Description</th>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.project_name %></td>
+      <td><%= project.description %></td>
+      <td><%= link_to 'Edit', edit_project_path(project, course_id: @course.id) %></td>
+      <td>
+        <%= link_to 'Delete', project_path(project_id: project.id, course_id: @course.id),
+                    :method => :delete, data: { confirm: "Are you sure you want to delete: " +
+                "#{project.project_name} from" +
+                "#{@course.course_name} #{@course.course_number} section #{@course.section_num}?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'new project', new_project_path(course_id: @course.id), method: :get %>

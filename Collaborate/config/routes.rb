@@ -3,6 +3,7 @@
 # Edited 7/23/2020 by Duytan Tran: added routing for destroying professor courses
 # Edited 7/24/2020 by Duytan Tran: Reimplemented professor routes into courses
 # Edited 7/25/2020 by Duytan Tran: added enrolled in and projects routes
+# Edited 7/26/2020 by Duytan Tran: removed resources :accounts to fix tool bar
 # Routes for Collaborate peer evaluation application
 Rails.application.routes.draw do
   # Courses page routes
@@ -18,7 +19,6 @@ Rails.application.routes.draw do
   get 'projects/:id', to: 'courses#view_projects'
 
   # Home page routes
-  resources :accounts
   devise_for :accounts
 
   devise_scope :account do

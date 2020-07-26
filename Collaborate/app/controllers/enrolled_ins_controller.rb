@@ -5,7 +5,7 @@ class EnrolledInsController < ApplicationController
   # Enrolls a new student into the displayed course based on name.num
   def enroll_student
     params.permit!
-    student = Student.find_by dot_name: params[:dot_name]
+    student = Student.find_by dot_name: params[:dot_name].downcase
     redirect_to enrolled_in_path(params[:id]) if EnrolledIn.new(student_id: student.id, course_id: params[:id]).save
   end
 

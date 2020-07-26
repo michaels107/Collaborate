@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'projects/:id', to: 'courses#view_projects'
 
   # Home page routes
+  resources :accounts, only: [:new]
+  post 'accounts/new', to: 'accounts#create'
   devise_for :accounts
 
   devise_scope :account do

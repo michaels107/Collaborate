@@ -4,7 +4,6 @@
 # Edited 7/21/2020 by Duytan Tran: removed email constraints
 # Validation rules for insertions into Professor table
 class Professor < ApplicationRecord
-
   belongs_to :account
   has_many :taught_bies
   validates :account_id, presence: true, uniqueness: true

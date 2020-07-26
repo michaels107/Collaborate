@@ -1,14 +1,15 @@
 # Created 7/22/2020 by Duytan Tran
 # Edited 7/23/2020 by Duytan Tran: implemented destroy
 # Edited 7/25/2020 by Duytan Tran: Converted to CoursesController, implemented edit/update
+# Edited 7/26/2020 by Duytan Tran
 # Controller for the course page for a particular professor who is logged in
 class CoursesController < ApplicationController
   # Created 7/22/2020 by Duytan Tran
   # Displays all courses currently associated with logged in professor
   def index
-    course_ids = TaughtBy.where(professor_id: current_account.id).pluck :course_id
-    @taught_courses = Course.where id: course_ids
     @professor = Professor.find_by(account_id: current_account.id)
+    course_ids = TaughtBy.where(professor_id: @professor.id).pluck :course_id
+    @taught_courses = Course.where id: course_ids
   end
 
   # Created 7/22/2020 by Duytan Tran
@@ -18,13 +19,18 @@ class CoursesController < ApplicationController
   end
 
   # Created 7/22/2020 by Duytan Tran
+  # Edited 7/26/2020 by Duytan Tran: Changed it so professor_id uses professor table id
   # Inserts new course into Course table and TaughtBy tables
   def create
     params.permit!
     @course = Course.new(params[:course])
     if @course.save
-      TaughtBy.new(professor_id: current_account.id, course_id: Course.last.id).save
-      redirect_to courses_path
+      if TaughtBy.new(professor_id: Professor.find_by(account_id: current_account.id).id,
+                      course_id: Course.order('created_at').last.id).save
+        redirect_to courses_path
+      else
+        @course.delete
+      end
     end
   end
 

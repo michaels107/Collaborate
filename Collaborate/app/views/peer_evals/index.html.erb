@@ -9,6 +9,7 @@
 <ul>
   <% @peer_evaluation.each do |peer_eval| %>
     # I would like the whole list entry to be a link to view the peer eval
+    # need to extract student and classmate names from student table.
     # Would that include another view like display_eval?
   <li> <%= link_to 'Evaluation of' + 'by', peer_evaluation_path(peer_eval)%> </li>
   <% end %>

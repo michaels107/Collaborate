@@ -1,11 +1,13 @@
+<!--Created 7/24/2020 by Duytan Tran
+    Edited 7/27/2020 by Duytan Tran: added link to site wide stylesheet
+    Default site wide layout-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Collaborate</title>
     <%= render 'layouts/toolBar' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>

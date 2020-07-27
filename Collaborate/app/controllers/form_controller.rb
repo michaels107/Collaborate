@@ -19,7 +19,7 @@ class FormController < ApplicationController
     @peer_evaluation = PeerEvaluation.new(peer_eval_params)
 
     if @peer_evaluation.save
-      Give.new (peer_evaluation_id: PeerEvaluation.order("created_at").last.id, student_id: current_account.id).save
+      Give.new(peer_evaluation_id: PeerEvaluation.order("created_at").last.id, student_id: current_account.id).save
       # define path somewhere??
       redirect_to peer_evaluation_path
     else

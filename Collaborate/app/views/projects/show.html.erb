@@ -4,10 +4,12 @@
 <table>
   <th>Project Name</th>
   <th>Description</th>
+  <th></th>
+  <th></th>
   <% @projects.each do |project| %>
     <tr>
       <td><%= project.project_name %></td>
-      <td><%= project.description %></td>
+      <td><%= truncate(project.description, length: 150) %></td>
       <td><%= link_to 'Edit', edit_project_path(project, course_id: @course.id) %></td>
       <td>
         <%= link_to 'Delete', project_path(project_id: project.id, course_id: @course.id),

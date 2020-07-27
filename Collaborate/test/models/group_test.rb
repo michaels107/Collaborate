@@ -8,8 +8,10 @@ class GroupTest < ActiveSupport::TestCase
   #  Created 7/20/2020 by Reema Gupta
   #   Initial valid form of a project formatted for insertion in Group table
   def setup
-    @group= Group.new group_name: 'Quaranteam',
-                      num_of_teammates: '6'
+    Course.new(section_num: 12345, course_name: 'Mathematics 22', course_number: 1123).save
+    @group = Group.new group_name: 'Quaranteam',
+                      num_of_teammates: '6',
+                      course_id: Course.last.id
   end
 
   test 'should be valid' do

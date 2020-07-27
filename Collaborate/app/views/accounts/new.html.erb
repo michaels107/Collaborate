@@ -1,7 +1,9 @@
 <!-- Created 7/22/2020 by Duytan Tran
      Edited 7/26/2020 by Duytan Tran: Added registering as a student or professor and retrieving additional account info
+     Edited 7/27/2020 by Duytan Tran: Added additional tags for styling
      HTML for user registration page-->
-<h2>Sign up</h2>
+<div class="sign_up_page">
+<h1>Sign up</h1>
 
 <%= form_with model: @account, url: new_account_path do |f| %>
   <%= render "devise/shared/error_messages", resource: @account %>
@@ -25,17 +27,17 @@
   </div>
 
   <div class="field">
-    <label>First Name:</label><br/>
+    <label>First Name</label><br/>
     <%= f.text_field :f_name %>
   </div>
 
   <div class="field">
-    <label>Last Name:</label><br/>
+    <label>Last Name</label><br/>
     <%= f.text_field :l_name %>
   </div>
 
   <div class="field">
-    <label>Name.Number:</label><br/>
+    <label>Name.Number</label><br/>
     <%= f.text_field :dot_name %>
   </div>
 
@@ -50,3 +52,4 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
+</div>

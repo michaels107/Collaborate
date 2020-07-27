@@ -6,7 +6,7 @@ class GiveTest < ActiveSupport::TestCase
   #Test Setups
   def setup
     Course.new(section_num: 43234, course_name: 'data', course_number: 1337).save
-    Group.new(group_name:'Quaranteam', num_of_teammates:'4').save
+    Group.new(group_name:'Quaranteam', num_of_teammates:'4', course_id: Course.last.id).save
     Account.new(email:'bob@gmail.com', password:'password').save
     Project.new(project_name:'something', description:'something', course_id: Course.last.id).save
     Student.new(account_id: Account.last.id,

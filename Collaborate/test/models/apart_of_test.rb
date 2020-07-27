@@ -11,8 +11,9 @@ class ApartOfTest < ActiveSupport::TestCase
                 l_name: 'Michaels',
                 dot_name:'michaels.107',
                 rating:'A').save
+    Course.new(section_num: 12345, course_name: 'Mathematics 22', course_number: 1123).save
     Group.new(group_name: 'Quaranteam',
-              num_of_teammates: '4').save
+              num_of_teammates: '4', course_id: Course.last.id).save
     @ApartOf = ApartOf.new student_id: Student.last.id, group_id: Group.last.id
 
   end

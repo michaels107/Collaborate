@@ -4,6 +4,7 @@
 # Validation rules for insertions into Course table
 class Course < ApplicationRecord
   has_many :projects
+  has_many :groups
   has_many :taught_bies
   validates :section_num, presence: true,
             numericality: {only_integer: true},

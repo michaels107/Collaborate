@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_25_024310) do
+ActiveRecord::Schema.define(version: 2020_07_26_214057) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2020_07_25_024310) do
     t.integer "num_of_teammates"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "course_id"
+    t.index ["course_id"], name: "index_groups_on_course_id"
   end
 
   create_table "peer_evaluations", force: :cascade do |t|

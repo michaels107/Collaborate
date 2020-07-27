@@ -6,5 +6,6 @@ class Group < ApplicationRecord
             length: { maximum: 150 }
   validates :num_of_teammates, presence: true, numericality:{only_integer: true, greater_than_or_equal_to: 2}
   has_many :peer_evaluations
+  belongs_to :course
 
 end

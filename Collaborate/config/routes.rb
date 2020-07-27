@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   devise_scope :account do
     authenticated :account do
-      root 'pages#home', as: :authenticated_root
+        root 'pages#student_home', as: :authenticated_root
     end
 
     unauthenticated do

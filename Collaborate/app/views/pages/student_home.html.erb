@@ -1,0 +1,15 @@
+<!-- Created 7/22/2020 by Sean Michaels
+     HTML for displaying students courses-->
+<h1><%= "#{@student.f_name.downcase.capitalize} #{@student.l_name.downcase.capitalize}'s Courses" %></h1>
+<table>
+  <th>Section Number</th>
+  <th>Course Name</th>
+  <th>Course Number</th>
+  <% @enrolled_in.each do |course| %>
+    <tr>
+      <td><%= course.section_num %></td>
+      <td><%= course.course_name %></td>
+      <td><%= course.course_number %></td>
+    </tr>
+  <% end %>
+</table>

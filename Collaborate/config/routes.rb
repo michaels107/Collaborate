@@ -7,7 +7,7 @@
 # Routes for Collaborate peer evaluation application
 Rails.application.routes.draw do
   # Peer Eval forms page routes
-  # resources :peer_evaluations
+  resources :peer_evaluations, except: [:show]
   get 'peer_evaluations/:id', to: 'peer_evaluations#index'
 
   # Courses page routes

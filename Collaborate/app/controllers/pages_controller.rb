@@ -15,5 +15,16 @@ class PagesController < ApplicationController
     # Groups apart of controller code
     group_ids = ApartOf.where(student_id: @student.id).pluck :group_id
     @apart_of = Group.where id: group_ids
+
+
+    @project = Project.where(course_id: course_ids)
+    project_ids = @project.pluck :id
+    @associated = Associated.where(project_id: project_ids)
+
+    @pg = Hash.new
+    @project.each do |project|
+      @pg[project.project_name] = Group.find(@associated.find_by(project_id: project.id).group_id)
+    end
+
   end
 end

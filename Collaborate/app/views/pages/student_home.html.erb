@@ -17,15 +17,16 @@
 </table>
 <br />
 <div>
-  <h1><%= "Groups" %></h1>
+  <h1><%= "Projects" %></h1>
   <table>
+    <th>Project</th>
     <th>Group Name</th>
-    <th>Number of Teammates</th>
-    <% @apart_of.each do |group| %>
+    <th>Peer Evaluations</th>
+    <% @pg.each do |key, value| %>
       <tr>
-        <td><%= group.group_name %></td>
-        <td><%= group.num_of_teammates %></td>
-        <td><%= link_to 'Give Peer Evaluation', peer_evaluations_path(group)  %></td>
+        <td><%= key  %></td>
+        <td><%= value.group_name %></td>
+        <td><%= link_to 'Give', peer_evaluation_path(value) %></td>
       </tr>
     <% end %>
   </table>

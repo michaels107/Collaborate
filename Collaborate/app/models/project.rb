@@ -8,4 +8,5 @@ class Project < ApplicationRecord
   validates :description, length: { maximum: 255 }
   has_many :peer_evaluations
   belongs_to :course
+  has_many :associateds
 end

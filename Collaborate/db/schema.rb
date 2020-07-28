@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_26_214057) do
+ActiveRecord::Schema.define(version: 2020_07_28_202629) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 2020_07_26_214057) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_apart_ofs_on_group_id"
     t.index ["student_id"], name: "index_apart_ofs_on_student_id"
+  end
+
+  create_table "associateds", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_associateds_on_group_id"
+    t.index ["project_id"], name: "index_associateds_on_project_id"
   end
 
   create_table "courses", force: :cascade do |t|

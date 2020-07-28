@@ -1,0 +1,28 @@
+
+<h1>Enrollment for: <%= "(#{@groups.group_name}) " %></h1>
+<table>
+  <th>Username</th>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Rating</th>
+  <th></th>
+  <% @enrolled.each do |student| %>
+    <tr>
+      <td><%= student.dot_name %></td>
+      <td><%= student.f_name %></td>
+      <td><%= student.l_name %></td>
+      <td><%= student.rating %></td>
+      <td>
+        <%= link_to 'Drop', apart_of_path(student_id: student.id, group_id: @groups.id),
+                    :method => :delete, data: { confirm: "Are you sure you want to drop: " +
+                "#{student.f_name.downcase.capitalize} #{student.dot_name.downcase.capitalize} from" +
+                "#{@groups.group_name} ?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= form_with do |f| %>
+  <p>Enroll a student (name.number):</p>
+  <%= f.text_field :dot_name %>
+  <%= f.submit 'Enroll'%>
+<% end %>

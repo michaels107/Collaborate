@@ -1,0 +1,12 @@
+<%= form_with model: group do |f| %>
+  <% submit_type = "Create" %>
+  <% submit_type = "Update" if Group.exists? id: group[:id] %>
+  <p>Group Name:</p>
+  <%= f.text_field :group_name %>
+  <br>
+  <p>Number of Teammates:</p>
+  <%= f.text_field :num_of_teammates %>
+  <br>
+  <%= f.hidden_field :course_id, value: group.course_id  %>
+  <%= f.submit submit_type %>
+<% end %>

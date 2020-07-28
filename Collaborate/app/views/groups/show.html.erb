@@ -1,0 +1,22 @@
+<h1>Groups for: <%= "(#{@course.section_num}) #{@course.course_name} #{@course.course_number}" %></h1>
+<table>
+  <th>Group Name</th>
+  <th>Number of Teammates</th>
+  <th></th>
+  <th></th>
+  <% @groups.each do |group| %>
+    <tr>
+      <td><%= group.group_name %></td>
+      <td><%= group.num_of_teammates %></td>
+      <td><%= link_to 'Groups', apart_of_path(group) %></td>
+      <td><%= link_to 'Edit', edit_group_path(group, course_id: @course.id) %></td>
+      <td>
+        <%= link_to 'Delete', group_path(group_id: group.id, course_id: @course.id),
+                    :method => :delete, data: { confirm: "Are you sure you want to delete: " +
+                "#{group.group_name} from" +
+                "#{@course.course_name} #{@course.course_number} section #{@course.section_num}?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'new group', new_group_path(course_id: @course.id), method: :get %>

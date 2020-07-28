@@ -1,0 +1,18 @@
+<!--
+ Created 7/27/2020 by Caroline Wheeler
+ Edited 7/28/2020 by Sean Michaels
+ To view the index of all peer evaluations.
+ Can select a listing to view the evaluation
+-->
+<div>
+  <h1>List of peer evaluations: </h1>
+  <table>
+    <th>Member</th>
+    <th>Peer Evaluation</th>
+    <% @members.each do |students| %>
+      <tr>
+        <td><%= students.f_name + " " + students.l_name %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -25,6 +25,7 @@
       <tr>
         <td><%= group.group_name %></td>
         <td><%= group.num_of_teammates %></td>
+        <td><%= link_to 'Give Peer Evaluation', peer_evaluations_path(group)  %></td>
       </tr>
     <% end %>
   </table>

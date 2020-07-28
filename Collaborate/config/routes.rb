@@ -3,9 +3,12 @@
 # Edited 7/23/2020 by Duytan Tran: added routing for destroying professor courses
 # Edited 7/24/2020 by Duytan Tran: Reimplemented professor routes into courses
 # Edited 7/25/2020 by Duytan Tran: added enrolled in and projects routes
-# Edited 7/26/2020 by Duytan Tran: removed resources :accounts to fix tool bar
+# Edited 7/26/2020 by Duytan Tran: removed forms :accounts to fix tool bar
 # Routes for Collaborate peer evaluation application
 Rails.application.routes.draw do
+  # Peer Eval forms page routes
+  # resources :peer_evaluations
+  get 'peer_evaluations/:id', to: 'peer_evaluations#index'
 
   # Courses page routes
   resources :courses

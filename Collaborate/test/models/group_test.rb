@@ -17,7 +17,7 @@ class GroupTest < ActiveSupport::TestCase
   test 'should be valid' do
     assert @group.valid?
   end
-  # group name constraints testing
+  # groups name constraints testing
   test 'group_name should be present' do
     @group.group_name = '     '
     assert_not @group.valid?

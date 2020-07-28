@@ -26,7 +26,7 @@ class ApartOfTest < ActiveSupport::TestCase
     assert_not @ApartOf.valid?
   end
 
-  test 'valid group' do
+  test 'valid groups' do
     @ApartOf.group_id = -2
     assert_not @ApartOf.valid?
   end

@@ -7,8 +7,13 @@ class PagesController < ApplicationController
       redirect_to courses_path
       return
     end
+    # Courses enrolled in controller code
     @student = Student.find_by(account_id: current_account.id)
     course_ids = EnrolledIn.where(student_id: @student.id).pluck :course_id
     @enrolled_in = Course.where id: course_ids
+
+    # Groups apart of controller code
+    group_ids = ApartOf.where(student_id: @student.id).pluck :group_id
+    @apart_of = Group.where id: group_ids
   end
 end

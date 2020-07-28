@@ -6,6 +6,7 @@
 # Edited 7/26/2020 by Duytan Tran: removed resources :accounts to fix tool bar
 # Routes for Collaborate peer evaluation application
 Rails.application.routes.draw do
+
   # Courses page routes
   resources :courses
 

@@ -1,6 +1,8 @@
 <!-- Created 7/22/2020 by Sean Michaels
      HTML for displaying students courses-->
-<h1><%= "#{@student.f_name.downcase.capitalize} #{@student.l_name.downcase.capitalize}'s Courses" %></h1>
+<h1><%= "#{@student.f_name.downcase.capitalize} #{@student.l_name.downcase.capitalize}'s Portal" %></h1>
+<br />
+<h1><%= "Courses" %></h1>
 <table>
   <th>Section Number</th>
   <th>Course Name</th>
@@ -13,3 +15,17 @@
     </tr>
   <% end %>
 </table>
+<br />
+<div>
+  <h1><%= "Groups" %></h1>
+  <table>
+    <th>Group Name</th>
+    <th>Number of Teammates</th>
+    <% @apart_of.each do |group| %>
+      <tr>
+        <td><%= group.group_name %></td>
+        <td><%= group.num_of_teammates %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :peer_evaluations, except: [:show]
   get 'peer_evaluations/:id', to: 'peer_evaluations#index'
 
+
+
   # Courses page routes
   resources :courses
 

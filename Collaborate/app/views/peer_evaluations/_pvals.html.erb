@@ -3,13 +3,11 @@
  HTML for the peer evaluation form.
 -->
 
-<%= form_with  model: @peer_evaluation do |f|%> //generates form tag
+<%= form_with  model: @peer_evaluation do |f|%>
   <% submit_type = "Create" %>
 
   <h1> PEER EVALUATION FORM</h1>
-  <%= hidden_field_tag 'student'%> #need , after student then extract name of current user
-
-  <%= select_tag(:classmate_id, options_for_select([['Caroline', 1], ['Reema', 2], ['Sean', 3], ['Duytan', 4]])) %>
+  <%= hidden_field_tag 'student'%>
 
   <!-- Attendance -->
   <p>

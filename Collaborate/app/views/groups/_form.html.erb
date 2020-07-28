@@ -1,3 +1,5 @@
+<!-- Created 7/27/2020 by Reema Gupta
+ HTML form partial for editing and creating groups-->
 <%= form_with model: group do |f| %>
   <% submit_type = "Create" %>
   <% submit_type = "Update" if Group.exists? id: group[:id] %>

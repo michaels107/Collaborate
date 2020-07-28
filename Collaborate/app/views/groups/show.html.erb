@@ -1,3 +1,5 @@
+<!-- Created 7/27/2020 by Reema Gupta
+     HTML for groups associated with course -->
 <h1>Groups for: <%= "(#{@course.section_num}) #{@course.course_name} #{@course.course_number}" %></h1>
 <table>
   <th>Group Name</th>
@@ -8,7 +10,7 @@
     <tr>
       <td><%= group.group_name %></td>
       <td><%= group.num_of_teammates %></td>
-      <td><%= link_to 'Groups', apart_of_path(group) %></td>
+      <td><%= link_to 'Students', apart_of_path(group) %></td>
       <td><%= link_to 'Edit', edit_group_path(group, course_id: @course.id) %></td>
       <td>
         <%= link_to 'Delete', group_path(group_id: group.id, course_id: @course.id),

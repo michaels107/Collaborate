@@ -1,4 +1,5 @@
-
+<!-- Created 7/27/2020 by Reema Gupta
+     HTML for displaying enrolled students in a particular group-->
 <h1>Enrollment for: <%= "(#{@groups.group_name}) " %></h1>
 <table>
   <th>Username</th>
@@ -24,5 +25,5 @@
 <%= form_with do |f| %>
   <p>Enroll a student (name.number):</p>
   <%= f.text_field :dot_name %>
-  <%= f.submit 'Enroll'%>
+  <%= f.submit 'Add student'%>
 <% end %>

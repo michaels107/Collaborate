@@ -3,10 +3,10 @@
 # Edited 7/27/2020 by Caroline Wheeler
 # Controller for the peer evaluation form page
 #
-# Note: Unsure how to redirect/where to
-class FormController < ApplicationController
+class PeerEvaluationsController < ApplicationController
   # Created 7/25/2020 by Caroline Wheeler
   # Provides new peer eval form with instance
+
   def new
     @peer_evaluation = PeerEvaluation.new
   end
@@ -28,9 +28,11 @@ class FormController < ApplicationController
   end
 
   # Created 7/26/2020 by Caroline Wheeler
+  # Edited 7/28/2020 by Sean Michaels : changing the index method to list all students in a group
   # Gets all peer evals
   def index
-    @peer_evaluations = PeerEvaluation.all
+    student_ids = ApartOf.where(group_id: params[:id]).pluck :student_id
+    @members = Student.where id: student_ids
   end
 
   # Created 7/25/2020 by Caroline Wheeler

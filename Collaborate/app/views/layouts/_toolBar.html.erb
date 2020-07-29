@@ -6,6 +6,8 @@
     <%= link_to 'sign out', destroy_account_session_path, method: :delete %>
     <% if Professor.exists? account_id: current_account.id %>
       <%= link_to 'view courses', courses_path, method: :get %>
+    <% else %>
+      <%= link_to 'student portal', :authenticated_root, method: :get %>
     <% end %>
   <% else %>
     <%= link_to 'sign up', new_account_path %>

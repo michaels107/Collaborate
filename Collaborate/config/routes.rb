@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   # Peer Eval forms page routes
   resources :peer_evaluations, except: [:show]
   get 'peer_evaluations/:id', to: 'peer_evaluations#index'
-
-
+  post 'peer_evaluations/new', to: 'peer_evaluations#create'
 
   # Courses page routes
   resources :courses

@@ -8,8 +8,8 @@
   <h1> PEER EVALUATION FORM</h1>
 
   <!-- hidden tags identify the student doing peer eval and the classmate they are evaluating-->
-  <%= hidden_field_tag 'student'%>
-  <%= hidden_field_tag 'classmate' %>
+  <%= hidden_field_tag(:student_id, @student_id) %>
+  <%= hidden_field_tag(:associated_id, @associated_id) %>
 
   <!-- Attendance -->
   <div class="radio">
@@ -21,7 +21,7 @@
     <%=label_tag(:weak, "Weak") %>
     <%= radio_button_tag(:attendance, "2")%>
     <%=label_tag(:below, "Below Average") %>
-    <%= radio_button_tag(:attendance, "3")%>
+    <%= radio_button_tag(:attendance, "3", true)%>
     <%=label_tag(:average, "Average") %>
     <%= radio_button_tag(:attendance, "4")%>
     <%=label_tag(:above, "Above Average") %>
@@ -40,7 +40,7 @@
     <%=label_tag(:weak, "Weak") %>
     <%= radio_button_tag(:participation, "2")%>
     <%=label_tag(:below, "Below Average") %>
-    <%= radio_button_tag(:participation, "3")%>
+    <%= radio_button_tag(:participation, "3", true)%>
     <%=label_tag(:average, "Average") %>
     <%= radio_button_tag(:participation, "4")%>
     <%=label_tag(:above, "Above Average") %>
@@ -59,7 +59,7 @@
     <%=label_tag(:weak, "Weak") %>
     <%= radio_button_tag(:contribution, "2")%>
     <%=label_tag(:below, "Below Average") %>
-    <%= radio_button_tag(:contribution, "3")%>
+    <%= radio_button_tag(:contribution, "3", true)%>
     <%=label_tag(:average, "Average") %>
     <%= radio_button_tag(:contribution, "4")%>
     <%=label_tag(:above, "Above Average") %>
@@ -78,7 +78,7 @@
     <%=label_tag(:weak, "Weak") %>
     <%= radio_button_tag(:time, "2")%>
     <%=label_tag(:below, "Below Average") %>
-    <%= radio_button_tag(:time, "3")%>
+    <%= radio_button_tag(:time, "3", true)%>
     <%=label_tag(:average, "Average") %>
     <%= radio_button_tag(:time, "4")%>
     <%=label_tag(:above, "Above Average") %>
@@ -97,7 +97,7 @@
     <%=label_tag(:weak, "Weak") %>
     <%= radio_button_tag(:team, "2")%>
     <%=label_tag(:below, "Below Average") %>
-    <%= radio_button_tag(:team, "3")%>
+    <%= radio_button_tag(:team, "3", true)%>
     <%=label_tag(:average, "Average") %>
     <%= radio_button_tag(:team, "4")%>
     <%=label_tag(:above, "Above Average") %>
@@ -116,7 +116,7 @@
 
   <!--Submit Button -->
   <div class="actions">
-    <%f.submit "Submit" %>
+    <%= f.submit "Submit" %>
   </div>
 
 <% end %>

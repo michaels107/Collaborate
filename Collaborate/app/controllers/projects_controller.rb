@@ -9,10 +9,12 @@ class ProjectsController < ApplicationController
   end
 
   # Created 7/25/2020 by Duytan Tran
+  # Edited 7/29/2020 by Duytan Tran: Made it so project names are lowercase
   # Inserts new project into projects table
   def create
     params.permit!
     @project = Project.new(params[:project])
+    @project.project_name.downcase!
     redirect_to project_path(@project.course_id) if @project.save
   end
 

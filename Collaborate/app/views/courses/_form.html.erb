@@ -4,7 +4,7 @@
 <%= form_with model: course do |f| %>
   <% submit_type = "Create" %>
   <% submit_type = "Update" if Course.exists? id: course[:id] %>
-  <p>Section Number</p>
+  <p>Section Number (Unique)</p>
   <%= f.number_field :section_num %>
   <br>
   <p>Course Name</p>

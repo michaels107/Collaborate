@@ -22,11 +22,11 @@
     <th>Project</th>
     <th>Group Name</th>
     <th>Peer Evaluations</th>
-    <% @pg.each do |key, value| %>
+    <% @pg.each do |project_name, group_assoc| %>
       <tr>
-        <td><%= key  %></td>
-        <td><%= value.group_name %></td>
-        <td><%= link_to 'Peer Evaluations', peer_evaluation_path(value) %></td>
+        <td><%= project_name  %></td>
+        <td><%= group_assoc[0].group_name %></td>
+        <td><%= link_to 'Peer Evaluations', peer_evaluation_path(group_assoc[0], associated_id: group_assoc[1].id) %></td>
       </tr>
     <% end %>
   </table>

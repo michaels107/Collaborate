@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_185533) do
+ActiveRecord::Schema.define(version: 2020_07_29_212646) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -78,16 +78,17 @@ ActiveRecord::Schema.define(version: 2020_07_29_185533) do
   end
 
   create_table "peer_evaluations", force: :cascade do |t|
-    t.string "project_role"
-    t.string "content"
-    t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "group_id"
     t.integer "student_id"
     t.string "attendance"
-    t.index ["group_id"], name: "index_peer_evaluations_on_group_id"
-    t.index ["project_id"], name: "index_peer_evaluations_on_project_id"
+    t.integer "associated_id"
+    t.string "participation"
+    t.string "contribution"
+    t.string "time"
+    t.string "team"
+    t.string "general"
+    t.index ["associated_id"], name: "index_peer_evaluations_on_associated_id"
     t.index ["student_id"], name: "index_peer_evaluations_on_student_id"
   end
 

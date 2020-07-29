@@ -22,10 +22,13 @@ class PagesController < ApplicationController
     project_ids = @project.pluck :id
     @associated = Associated.where(project_id: project_ids)
 
-    @pg = Hash.new
+    @pg = Hash.new { |h, k| h[k] = [] }
     @project.each do |project|
-      group = @associated.find_by project_id: project.id
-      @pg[project.project_name] = Group.find(group.id) unless group.nil?
+      associated_row = @associated.find_by project_id: project.id
+      unless associated_row.nil?
+        @pg[project.project_name] << Group.find(associated_row.group_id)
+        @pg[project.project_name] << associated_row
+      end
     end
 
   end

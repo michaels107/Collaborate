@@ -9,15 +9,19 @@ class GiveTest < ActiveSupport::TestCase
     Group.new(group_name:'Quaranteam', num_of_teammates:'4', course_id: Course.last.id).save
     Account.new(email:'bob@gmail.com', password:'password').save
     Project.new(project_name:'something', description:'something', course_id: Course.last.id).save
+    Associated.new(group_id: Group.last.id, project_id: Project.last.id).save
     Student.new(account_id: Account.last.id,
                 f_name: 'Sean',
                 l_name: 'Michaels',
                 dot_name:'michaels.107',
                 rating:'A').save
-    PeerEvaluation.new(project_role: 'leader',
-                       content: 'leader 1',
-                       project_id: Project.last.id,
-                       group_id: Group.last.id,
+    PeerEvaluation.new(attendance: '2',
+                       participation: '3',
+                       contribution: '4',
+                       time: '5',
+                       team: '3',
+                       general: '4',
+                       associated_id: Associated.last.id,
                        student_id: Student.last.id).save
     @Give = Give.new student_id: Student.last.id, peer_evaluation_id: PeerEvaluation.last.id
 

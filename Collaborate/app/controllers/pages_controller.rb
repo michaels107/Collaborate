@@ -1,5 +1,6 @@
 # Created 7/26/2020 by Sean Michaels
 # Edited 7/27/2020 by Duytan Tran: added redirect if professor is signed in
+# Edited 7/29/2020 by Duytan Tran: added additional check if group_id is nil
 # Controller for managing student view of courses
 class PagesController < ApplicationController
   def student_home
@@ -23,7 +24,8 @@ class PagesController < ApplicationController
 
     @pg = Hash.new
     @project.each do |project|
-      @pg[project.project_name] = Group.find(@associated.find_by(project_id: project.id).group_id)
+      group_id = @associated.find_by project_id: project.id
+      @pg[project.project_name] = Group.find(group_id).group_id unless group_id.nil?
     end
 
   end

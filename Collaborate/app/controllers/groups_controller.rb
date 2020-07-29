@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
   end
   def create
     params.permit!
+
     @group =Group.new(params[:group])
     redirect_to group_path(@group.course_id) if @group.save
   end
@@ -27,8 +28,8 @@ class GroupsController < ApplicationController
   end
 
   def view_students_in_group
-    student_ids = ApartOf.where(group_id: params[:id]).pluck :student_id
-    @enrolled = Student.where id: student_ids
+    student_ids = ApartOf.where(group_id: params[:group_id]).pluck :student_id
+    @enrolled=Student.where id:student_ids
     @groups = Group.find(params[:id])
     render 'apart_ofs/show'
   end

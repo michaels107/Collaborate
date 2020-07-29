@@ -35,7 +35,7 @@ Collaborate is a peer evaluation submission web application that allows professo
 ### Setting Up the Collaborate Web Application
 1. Traverse into the Collaborate folder housed within the Project-6-Quaranteam directory you downloaded via terminal command: 
 
-    >cd [file/path/to/Collaborate]
+    >cd file/path/to/Collaborate
 
 1. Run bundle install via terminal command:
 

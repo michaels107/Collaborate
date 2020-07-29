@@ -11,6 +11,7 @@
       <td><%= group.group_name %></td>
       <td><%= group.num_of_teammates %></td>
       <td><%= link_to 'Students', apart_of_path(group) %></td>
+      <td><%= link_to 'Projects', associated_path(group) %></td>
       <td><%= link_to 'Edit', edit_group_path(group, course_id: @course.id) %></td>
       <td>
         <%= link_to 'Delete', group_path(group_id: group.id, course_id: @course.id),

@@ -33,4 +33,10 @@ class GroupsController < ApplicationController
     @groups = Group.find(params[:id])
     render 'apart_ofs/show'
   end
+  def view_projects_in_group
+    project_ids=Associated.where(group_id: params[:id]).pluck :project_id
+    @projects=Project.where id:project_ids
+    @groups = Group.find(params[:id])
+    render 'associateds/show'
+  end
 end

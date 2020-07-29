@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get 'apart_ofs/:id', to: 'groups#view_students_in_group'
   post 'apart_ofs/:id', to: 'apart_ofs#add_student_to_group'
 
+  resources :associateds, except: [:show]
+  get 'associateds/:id', to: 'groups#view_projects_in_group'
+  post 'associateds/:id', to: 'associateds#add_project_to_group'
+
   # Enrolled page routes
   resources :enrolled_ins, except: [:show]
   get 'enrolled_ins/:id', to: 'courses#view_enrolled'

@@ -1,0 +1,98 @@
+Created 7/29/2020 by Reema Gupta
+System testing for operations on the professor side
+
+### System Testing Groups page ###
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether link to groups works on the professor home page
+Description: Click on the Groups link on the Professor home page
+Expected Output: Groups page for the course will be displayed
+Actual Output: Groups page for the course was displayed
+
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether new group link in the group page works
+Description: Click on the "new group" link on the group page for professor
+Expected Output: A form asking the name of the group
+Actual Output: Form asking new group is displayed on screen
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether delete link for the group page works.
+Description: Click on the "delete" link on the group page for professor
+
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether Edit Link works
+Description: Click on the "edit" link on the group page for professor
+Expected Output: A form displaying the the current group_name, Z
+Actual Output: A form displaying the the current group_name
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether GROUPS Link works
+Description: Click on the "edit" link on the group page for professor
+Expected Output: A form displaying the the current group_name
+Actual Output: A form displaying the the current group_name
+
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether Students link works
+Description: Click on the "Students" link on the group page for professor
+Expected Output: A page would be displayed where professor could add and delete the students in the group
+Actual Output: Displayed a page where professor could add and delete the students in the group
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether projects link works
+Description: Click on the "Projects" link on the group page for professor
+Expected Output: A page would be displayed where professor could add group projects
+Actual Output: A page was displayed where professor could add group projects
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether a student could be added from the enrollment table into the group for a particular course
+Description: Adding a student who is in the enrolled list to a group
+Expected Output: The details of the student will be displayed on the table
+Actual Output: The details of the student will be displayed on the table
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether a student could be added if he is not in the enrollment table of the course
+Description: Adding a student who is not in the enrolled list to a group
+Expected Output: Nothing happens, student is not added to the table
+Actual Output: Student is not added to the table
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Dropping a student from the group
+Description: Click on Drop to remove student and his details from the group
+Expected Output: Student details are removed
+Actual Output: Student details are removed
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether a project  from the course projects table could be added into the group
+Description: Adding a student project from course project list
+Expected Output: The details of the project will be displayed on the table
+Actual Output: The details of the project will be displayed on the table
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Testing whether a project could be added if it is not in the course projects table
+Description: Adding a project which is not in the course project table
+Expected Output: Nothing happens, project is not added to the table
+Actual Output:Project is not added to the table
+
+Author: Reema Gupta
+Date:7/29/2020
+Test: Dropping a project from the group
+Description: Click on delete to remove project and it's details from the group
+Expected Output: Project details are removed
+Actual Output: Project details are removed
+
+

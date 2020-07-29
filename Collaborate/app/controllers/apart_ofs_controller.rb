@@ -2,9 +2,12 @@
 # Controller for student enrollment in a group
 class ApartOfsController < ApplicationController
   def add_student_to_group
-    enrolled= Student.find_by dot_name: params[:dot_name].downcase
-    stud= EnrolledIn.find_by(student_id: enrolled.id)
-    redirect_to apart_of_path(params[:id]) if ApartOf.new(student_id: stud, group_id: params[:id]).save
+    student= Student.find_by dot_name: params[:dot_name].downcase
+    group=Group.find_by id: params[:id]
+    if EnrolledIn.exists?(student_id: student.id, course_id: group.course_id)
+    redirect_to apart_of_path(params[:id]) if ApartOf.new(student_id: student.id, group_id: params[:id]).save
+    end
+
   end
 
   def destroy

@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
   end
 
   def view_students_in_group
-    student_ids = ApartOf.where(group_id: params[:group_id]).pluck :student_id
+    student_ids = ApartOf.where(group_id: params[:id]).pluck :student_id
     @enrolled=Student.where id:student_ids
     @groups = Group.find(params[:id])
     render 'apart_ofs/show'

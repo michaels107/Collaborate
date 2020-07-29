@@ -2,6 +2,15 @@
 ### Ruby on Rails Project: Collaborate
 Collaborate is a peer evaluation submission web application that allows professors to create a centralized location in which students can submit peer evaluations pertaining to their group projects.
 
+### Roles
+* Overall Project Manager: Duytan Tran
+* Coding Manager: Sean Michaels
+* Testing Manager: Caroline Wheeler
+* Documentation: Reema Gupta
+
+### Contributions
+* Implemented professor, peer evaluation, project models; implemented course, project, enrolled in, and accounts controller with associated views; handled site-wide css styling; implemented Devise registration with student or professor assignment: Duytan Tran
+
 ### Walkthrough - Student
 1. Upon entering the web application you are met with a login screen, by pressing the sign up button you can register yourself as a student
 1. As a student you will be met with a student portal page upon logging in that communicates the current courses you have been enrolled in on the site and the projects and groups you are assigned to
@@ -22,15 +31,6 @@ Collaborate is a peer evaluation submission web application that allows professo
    - Pressing Groups will bring you to a page in which you can register groups to the course
       - For each group created you can assign to it existing students and existing projects
 1. Professors can view any peer evaluations submitted by their students via viewing the group then the project assigned to that group
-
-### Roles
-* Overall Project Manager: Duytan Tran
-* Coding Manager: Sean Michaels
-* Testing Manager: Caroline Wheeler
-* Documentation: Reema Gupta
-
-### Contributions
-* Implemented professor, peer evaluation, project models; implemented course, project, enrolled in, and accounts controller with associated views; handled site-wide css styling; implemented Devise registration with student or professor assignment: Duytan Tran
 
 ### Setting Up the Collaborate Web Application
 1. Traverse into the Collaborate folder housed within the Project-6-Quaranteam directory you downloaded via terminal command: 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_202629) do
+ActiveRecord::Schema.define(version: 2020_07_29_185533) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_202629) do
     t.datetime "updated_at", null: false
     t.integer "group_id"
     t.integer "student_id"
+    t.string "attendance"
     t.index ["group_id"], name: "index_peer_evaluations_on_group_id"
     t.index ["project_id"], name: "index_peer_evaluations_on_project_id"
     t.index ["student_id"], name: "index_peer_evaluations_on_student_id"

@@ -1,5 +1,9 @@
-# Edited 7/27/2020 by Reema Gupta
+# Created 7/27/2020 by Reema Gupta
+# Edited 7/28/2020 by Reema Gupta
 # Controller for student enrollment in a group
+
+# Edited 7/28/2020 by Reema Gupta
+# method for adding student to  a group
 class ApartOfsController < ApplicationController
   def add_student_to_group
     student= Student.find_by dot_name: params[:dot_name].downcase
@@ -10,6 +14,8 @@ class ApartOfsController < ApplicationController
 
   end
 
+  # Edited 7/28/2020 by Reema Gupta
+  # method for removing student from a group
   def destroy
     @apart_of = ApartOf.find_by(student_id: params[:student_id], group_id: params[:group_id])
     @apart_of.destroy

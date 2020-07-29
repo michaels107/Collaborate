@@ -1,5 +1,6 @@
 <!--
  Created 7/25/2020 by Caroline Wheeler
+ Edited 7/29/2020 by Duytan Tran: Added relevant hidden fields, set default radio to average
  HTML for the peer evaluation form.
 -->
 
@@ -10,6 +11,7 @@
   <!-- hidden tags identify the student doing peer eval and the classmate they are evaluating-->
   <%= hidden_field_tag(:student_id, @student_id) %>
   <%= hidden_field_tag(:associated_id, @associated_id) %>
+  <%= hidden_field_tag(:page_id, @page_id) %>
 
   <!-- Attendance -->
   <div class="radio">

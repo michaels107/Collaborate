@@ -12,7 +12,8 @@
     <% @members.each do |students| %>
       <tr>
         <td><%= students.f_name + " " + students.l_name %></td>
-        <td><%= link_to 'Give', new_peer_evaluation_path(student_id: students.id, associated_id: @associated_id) %></td>
+        <td><%= link_to 'Give', new_peer_evaluation_path(student_id: students.id, associated_id: @associated_id,
+                                                         page_id: @page_id )%></td>
       </tr>
     <% end %>
   </table>

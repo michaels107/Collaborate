@@ -17,10 +17,15 @@ class PeerEvaluationsController < ApplicationController
   def create
     # @peer_evaluation = PeerEvaluation.new(f_name: params[:f_name], etc.)
     @peer_evaluation = PeerEvaluation.new(peer_eval_params)
-
+    parameters = params[:peer_evaluation]
+    @peer_evaluation = PeerEvaluation.new(attendance:parameters[:attendance],
+                                          participation:parameters[:participation],
+                                          contribution:parameters[:contribution],
+                                          time:parameters[:time],
+                                          team:parameters[:team],
+                                          general:parameters[:general])
     if @peer_evaluation.save
       Give.new(peer_evaluation_id: PeerEvaluation.order("created_at").last.id, student_id: current_account.id).save
-      # define path somewhere??
       redirect_to peer_evaluation_path
     else
       render :new
@@ -55,8 +60,7 @@ class PeerEvaluationsController < ApplicationController
 
   private
   def peer_eval_params
-    # Note: need to specify different params based on the form
-    params.require(:peer_evaluation).permit(:f_name)
+    params.require(:peer_evaluation).permit(:attendance, :participation, :contribution, :time, :team, :general)
   end
 
 end

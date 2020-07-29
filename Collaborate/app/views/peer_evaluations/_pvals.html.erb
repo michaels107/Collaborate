@@ -7,7 +7,10 @@
   <% submit_type = "Create" %>
 
   <h1> PEER EVALUATION FORM</h1>
-  <%= hidden_field_tag 'student'%>
+
+  <!-- hidden tags identify the student doing peer eval and the classmate they are evaluating-->
+  <%= hidden_field_tag 'student' ,current_user.id%>
+  <%= hidden_field_tag 'classmate' %>
 
   <!-- Attendance -->
   <div>
@@ -91,15 +94,15 @@
     <b>Worked well with the team.</b><br>
     <%= radio_button_tag(:team, "0")%>
     <%=label_tag(:no_contrib, "No Contribution") %>
-    <%= radio_button_tag(:time, "1")%>
+    <%= radio_button_tag(:team, "1")%>
     <%=label_tag(:weak, "Weak") %>
-    <%= radio_button_tag(:time, "2")%>
+    <%= radio_button_tag(:team, "2")%>
     <%=label_tag(:below, "Below Average") %>
-    <%= radio_button_tag(:time, "3")%>
+    <%= radio_button_tag(:team, "3")%>
     <%=label_tag(:average, "Average") %>
-    <%= radio_button_tag(:time, "4")%>
+    <%= radio_button_tag(:team, "4")%>
     <%=label_tag(:above, "Above Average") %>
-    <%= radio_button_tag(:time, "5")%>
+    <%= radio_button_tag(:team, "5")%>
     <%=label_tag(:superior, "Superior") %>
   </p>
   </div>

@@ -10,6 +10,7 @@
   <%= hidden_field_tag 'student'%>
 
   <!-- Attendance -->
+  <div>
   <p>
     <b>Attended all group meetings.</b><br>
     <%= radio_button_tag(:attendance, "0")%>
@@ -25,8 +26,10 @@
     <%= radio_button_tag(:attendance, "5")%>
     <%=label_tag(:superior, "Superior") %>
   </p>
+  </div>
 
   <!-- Participation -->
+  <div>
   <p>
     <b>Participated in group meetings and discussion.</b><br>
     <%= radio_button_tag(:participation, "0")%>
@@ -42,8 +45,10 @@
     <%= radio_button_tag(:participation, "5")%>
     <%=label_tag(:superior, "Superior") %>
   </p>
+  </div>
 
   <!-- Contribution -->
+  <div>
   <p>
     <b>Contributed significantly and work was of good quality.</b><br>
     <%= radio_button_tag(:contribution, "0")%>
@@ -59,8 +64,10 @@
     <%= radio_button_tag(:contribution, "5")%>
     <%=label_tag(:superior, "Superior") %>
   </p>
+  </div>
 
   <!-- Time -->
+  <div>
   <p>
     <b>Completed tasks on time.</b><br>
     <%= radio_button_tag(:time, "0")%>
@@ -76,8 +83,10 @@
     <%= radio_button_tag(:time, "5")%>
     <%=label_tag(:superior, "Superior") %>
   </p>
+  </div>
 
   <!-- Teamwork -->
+  <div>
   <p>
     <b>Worked well with the team.</b><br>
     <%= radio_button_tag(:team, "0")%>
@@ -93,12 +102,19 @@
     <%= radio_button_tag(:time, "5")%>
     <%=label_tag(:superior, "Superior") %>
   </p>
+  </div>
 
+  <!-- General -->
+  <div>
   <%= label_tag(:general, "General Feedback") %>
   <br>
   <%= text_area(:general ,:cols=>60, :rows=>6) %>
   <br>
+  </div>
 
+  <!--Submit Button -->
+  <div>
   <input type="submit" value="Submit Form">
+  </div>
 
 <% end %>

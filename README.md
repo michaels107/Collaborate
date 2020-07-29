@@ -56,7 +56,7 @@ Collaborate is a peer evaluation submission web application that allows professo
 ### Running Model Testing
 1. Traverse into the Collaborate folder housed within the Project-6-Quaranteam directory you downloaded via terminal command: 
 
-    >cd [file/path/to/Collaborate]
+    >cd file/path/to/Collaborate
     
 2. Run all of the model tests via terminal command:
 

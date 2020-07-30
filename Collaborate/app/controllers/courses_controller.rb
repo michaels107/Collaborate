@@ -88,12 +88,11 @@ class CoursesController < ApplicationController
     render 'projects/show'
   end
 
-
-# Created 7/27/2020 by Reema Gupta
-# Prepares a view for groups in a particular course
-def view_groups
-  @groups = Group.where(course_id: params[:id])
-  @course = Course.find(params[:id])
-  render 'groups/show'
-end
+  # Created 7/27/2020 by Reema Gupta
+  # Prepares a view for groups in a particular course
+  def view_groups
+    @groups = Group.where(course_id: params[:id])
+    @course = Course.find(params[:id])
+    render 'groups/show'
   end
+end

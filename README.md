@@ -12,6 +12,7 @@ Collaborate is a peer evaluation submission web application that allows professo
 * Implemented professor, peer evaluation, project models; implemented course, project, enrolled in, and accounts controller with associated views; handled site-wide css styling; implemented Devise registration with student or professor assignment: Duytan Tran
 * Implemented student, group, course project model; implemented adding groups to a course, implemented groups, associated and apart of controller, edited courses and projects controller- Reema Gupta
 * Implemented the TA(removed), apart_of, and taught_by models; implemented the peer_evaluation controller; implemented the peer evaluation form view and a view to index all peer evaluations - Caroline Wheeler
+* Implemented the give, associated, assistedby, apart_of models; implemented the pages controller,and edited the peer_evaluations controller; implemented the student_home, and edited the index for the peer_evaluations index. Helped with implementing devise into the project.  - Sean Michaels
 ### Walkthrough - Student
 1. Upon entering the web application you are met with a login screen, by pressing the sign up button you can register yourself as a student
 1. As a student you will be met with a student portal page upon logging in that communicates the current courses you have been enrolled in on the site and the projects and groups you are assigned to

@@ -1,6 +1,7 @@
 # Created 7/25/2020 by Caroline Wheeler
 # Edited 7/26/2020 by Caroline Wheeler
 # Edited 7/27/2020 by Caroline Wheeler
+# Edited 7/28/2020 by Sean Michaels : changing the index method to list all students in a group
 # Controller for the peer evaluation form page
 #
 class PeerEvaluationsController < ApplicationController

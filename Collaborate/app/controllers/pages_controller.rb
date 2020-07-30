@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     group_ids = ApartOf.where(student_id: @student.id).pluck :group_id
     @apart_of = Group.where id: group_ids
 
-
+    #Projects list
     @project = Project.where(course_id: course_ids)
     project_ids = @project.pluck :id
     @associated = Associated.where(project_id: project_ids)
@@ -31,6 +31,25 @@ class PagesController < ApplicationController
       end
     end
 
+    @peer_eval = PeerEvaluation.where(student_id: @student)
+    attendance = 0
+    participation = 0
+    contribution = 0
+    time = 0
+    count = 0
+    @peer_eval.each do |eval|
+      attendance = attendance + eval.attendance.to_i
+      participation = participation + eval.participation.to_i
+      contribution = contribution + eval.contribution.to_i
+      time = time + eval.time.to_i
+      count = count + 1
+    end
+    attendance = attendance / count
+    participation = participation / count
+    contribution =  contribution / count
+    time = time / count
+
+    @rating = percent
   end
 
   # Edited 7/29/2020 by Reema Gupta
@@ -39,4 +58,5 @@ class PagesController < ApplicationController
     @peer_evaluations = PeerEvaluation.where(associated_id: params[:id])
     render 'pages/show'
   end
+
 end

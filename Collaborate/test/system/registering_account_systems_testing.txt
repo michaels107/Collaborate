@@ -1,0 +1,60 @@
+Created 7/29/2020 by Duytan Tran
+System testing for registering accounts
+
+### System Testing On Sign in Page ###
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Testing that clicking sign up underneath the login button takes you to the sign up page
+Description: Click on the sign up button underneath login button
+Expected Output: Sign up page with email, password, first name, last name, and name dot number fields
+Actual Output: Sign up page with email, password, first name, last name, and name dot number fields
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Testing that clicking sign up on the tool bar takes you to the sign up page
+Description: Click on the sign up button on the tool bar
+Expected Output: Sign up page with email, password, first name, last name, and name dot number fields
+Actual Output: Sign up page with email, password, first name, last name, and name dot number fields
+
+### System Testing On Sign Up Page ###
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Register as a student
+Description: Enter email as 'student@gmail.com', password as 'password', first name as 'Stu', last name as 'Dent',
+             name.number as 'dent.69', and radio button set as 'student'
+Expected Output: Sent back to login page
+Actual Output: Sent back to login page
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Register as a different student
+Description: Enter email as 'student2@gmail.com', password as 'password', first name as 'John', last name as 'Smith',
+             name.number as 'Smith.420', and radio button set as 'student'
+Expected Output: Sent back to login page
+Actual Output: Sent back to login page
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Register with an existing email
+Description: Enter email as 'student@gmail.com', password as 'password', first name as 'Michael', last name as 'Smith',
+             name.number as 'Smith.69', and radio button set as 'student'
+Expected Output: Stay on sign up page
+Actual Output: Stay on sign up page
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Register as a professor
+Description: Enter email as 'teacher@gmail.com', password as 'password', first name as 'Tea', last name as 'Cher',
+             name.number as 'Cher.1', and radio button set as 'professor'
+Expected Output: Sent back to login page
+Actual Output: Sent back to login page
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Register as a different professor
+Description: Enter email as 'teacher2@gmail.com', password as 'password', first name as 'Pro', last name as 'Fessor',
+             name.number as 'Fessor.8008', and radio button set as 'professor'
+Expected Output: Sent back to login page
+Actual Output: Sent back to login page

@@ -74,6 +74,12 @@ class CoursesController < ApplicationController
     render 'enrolled_ins/show'
   end
 
+  # Created 7/29/2020 by Sean Michaels
+  # Calculates the value for the rating from Peer evals
+  def get_rating
+
+  end
+
   # Created 7/25/2020 by Duytan Tran
   # Prepares view for projects in a particular course
   def view_projects

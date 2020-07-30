@@ -32,24 +32,18 @@ class PagesController < ApplicationController
     end
 
     @peer_eval = PeerEvaluation.where(student_id: @student)
-    attendance = 0
-    participation = 0
-    contribution = 0
-    time = 0
+    sum = 0.0
     count = 0
     @peer_eval.each do |eval|
-      attendance = attendance + eval.attendance.to_i
-      participation = participation + eval.participation.to_i
-      contribution = contribution + eval.contribution.to_i
-      time = time + eval.time.to_i
-      count = count + 1
+      sum = sum + eval.attendance.to_i + eval.participation.to_i + eval.contribution.to_i + eval.time.to_i
+      count = count + 20
     end
-    attendance = attendance / count
-    participation = participation / count
-    contribution =  contribution / count
-    time = time / count
 
-    @rating = percent
+    unless count.zero?
+      sum /= count
+    end
+
+    @rating = sum*100
   end
 
   # Edited 7/29/2020 by Reema Gupta

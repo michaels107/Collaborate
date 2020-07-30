@@ -5,14 +5,14 @@
   <th>Username</th>
   <th>First Name</th>
   <th>Last Name</th>
-  <th>Rating</th>
+  <th></th>
   <th></th>
   <% @enrolled.each do |student| %>
     <tr>
       <td><%= student.dot_name %></td>
       <td><%= student.f_name %></td>
       <td><%= student.l_name %></td>
-      <td><%= student.rating %></td>
+      <td></td>
       <td>
         <%= link_to 'Drop', apart_of_path(student_id: student.id, group_id: @groups.id),
                     :method => :delete, data: { confirm: "Are you sure you want to drop: " +

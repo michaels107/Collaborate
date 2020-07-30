@@ -22,6 +22,7 @@ class PagesController < ApplicationController
     project_ids = @project.pluck :id
     @associated = Associated.where(project_id: project_ids)
 
+    # Gets the Group and the project together in a hash
     @pg = Hash.new { |h, k| h[k] = [] }
     @project.each do |project|
       associated_row = @associated.find_by project_id: project.id
@@ -31,6 +32,7 @@ class PagesController < ApplicationController
       end
     end
 
+    # This block is for calculating the rating of a peer evaluation.
     @peer_eval = PeerEvaluation.where(student_id: @student)
     sum = 0.0
     count = 0
@@ -38,12 +40,12 @@ class PagesController < ApplicationController
       sum = sum + eval.attendance.to_i + eval.participation.to_i + eval.contribution.to_i + eval.time.to_i
       count = count + 20
     end
-
     unless count.zero?
       sum /= count
     end
-
     @rating = sum*100
+
+
   end
 
   # Edited 7/29/2020 by Reema Gupta

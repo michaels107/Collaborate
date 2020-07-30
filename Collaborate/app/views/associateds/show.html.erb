@@ -10,6 +10,7 @@
     <tr>
       <td><%= project.project_name %></td>
       <td><%= truncate(project.description, length: 150) %></td>
+      <td><%= link_to 'Peer Evaluation',peer_evaluations_path %></td>
       <td>
         <%= link_to 'Delete', associated_path(project_id: project.id, group_id: @groups.id),
                     :method => :delete, data: { confirm: "Are you sure you want to delete: " +

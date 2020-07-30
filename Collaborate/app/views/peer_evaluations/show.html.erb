@@ -1,0 +1,20 @@
+<!-- Created 7/27/2020 by Reema Gupta
+     HTML for displaying peer evaluation result-->
+<table>
+  <th>Attendance</th>
+  <th>Participation</th>
+  <th>Contribution</th>
+  <th>Time </th>
+  <th>General</th>
+  <th></th>
+  <th></th>
+  <% @peer_evaluations.each do |peer_evalauation| %>
+    <tr>
+      <td><%= peer_evalauation.attendance %></td>
+      <td><%= peer_evalauation.participation%></td>
+      <td><%= peer_evalauation.contribution%></td>
+      <td><%= peer_evalauation.time%></td>
+      <td><%= peer_evalauation.general%></td>
+    </tr>
+  <% end %>
+</table>

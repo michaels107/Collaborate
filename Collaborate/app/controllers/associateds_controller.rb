@@ -20,4 +20,9 @@ class AssociatedsController < ApplicationController
       @associated.destroy
       redirect_to associated_path(params[:group_id])
     end
+
+  def view_peer_evaluation
+    @peer_evaluations=PeerEvaaluation.where(associated_id: params[:id])
+    render 'peer_evaluations/show'
+  end
   end

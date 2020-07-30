@@ -1,0 +1,39 @@
+Created 7/29/2020 by Duytan Tran
+System testing for logging into accounts
+
+### System Testing On Sign in Page ###
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Login as a registered student
+Description: Login with email 'student@gmail.com' and password 'password'
+Expected Output: Be sent to student portal page, greeted by Stu Dent's portal
+Actual Output: Sent to student portal page, greeted by Stu Dent's portal
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Login as a different registered student
+Description: Login with email 'student2@gmail.com' and password 'password'
+Expected Output: Be sent to student portal page, greeted by John Smith's portal
+Actual Output: Sent to student portal page, greeted by John Smith's portal
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Login as a registered professor
+Description: Login with email 'teacher@gmail.com' and password 'password'
+Expected Output: Be sent to courses webpage, greeted by Professor Tea Cher's courses
+Actual Output: Sent to courses webpage, greeted by Professor Tea Cher's courses
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Login as a different registered professor
+Description: Login with email 'teacher2@gmail.com' and password 'password'
+Expected Output: Be sent to courses webpage, greeted by Professor Pro Fessor's courses
+Actual Output: Sent to courses webpage, greeted by Professor Pro Fessor's courses
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Login as a non-existing account
+Description: Login with email 'yo@gmail.com' and password 'password'
+Expected Output: Stay on same page, password field cleared
+Actual Output: Stay on same page, password field cleared

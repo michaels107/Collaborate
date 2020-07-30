@@ -1,6 +1,6 @@
 <!--
  Created 7/27/2020 by Caroline Wheeler
- Edited 7/28/2020 by Sean Michaels
+ Edited 7/28/2020 by Sean Michaels : Fixed up most of the view code to correctly display the students and the groups.
  To view the index of all peer evaluations.
  Can select a listing to view the evaluation
 -->
@@ -12,7 +12,8 @@
     <% @members.each do |students| %>
       <tr>
         <td><%= students.f_name + " " + students.l_name %></td>
-        <td><%= link_to 'Give', new_peer_evaluation_path(student_id: students.id, associated_id: @associated_id) %></td>
+        <td><%= link_to 'Give', new_peer_evaluation_path(student_id: students.id, associated_id: @associated_id,
+                                                         page_id: @page_id )%></td>
       </tr>
     <% end %>
   </table>

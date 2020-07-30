@@ -1,0 +1,103 @@
+Created 7/29/2020 by Duytan Tran
+System testing for logged in professors
+
+### System Testing On Professor Course Page ###
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Tool bar updates according to account type
+Description: Login as a professor and look at tool bar
+Expected Output: Tool bar should only show sign out and view courses button
+Actual Output: Tool bar shows only sign out and view courses button
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Newly registered professor view of courses
+Description: Login as a new professor and look at courses table
+Expected Output: Courses table should be empty
+Actual Output: Courses table is empty
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Registered professor with courses presses add course
+Description: press new course link
+Expected Output: taken to create course form
+Actual Output: taken to create course form
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Registered professor with courses presses delete course
+Description: press delete course on existing course
+Expected Output: be met with an confirmation alert
+Actual Output: be met with an confirmation alert
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Registered professor with courses presses delete course and confirms
+Description: press delete course on existing course and confirms
+Expected Output: be met with courses table without deleted course
+Actual Output: be met with courses table without deleted course
+
+### System Testing On Creating Course Form ###
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Create a course
+Description: Create a course with section '12345' name 'Smithing' and course number '1234'
+Expected Output: be met with courses table with added course
+Actual Output: met with courses table with added course
+
+### System Testing On Editing Course Form ###
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Edit a course
+Description: Edit a course with section '12345' name 'Smithing' and course number '1234'
+Expected Output: be met course form filled out and update button
+Actual Output: met course form filled out and update button
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Edit a course and update
+Description: Edit a course with section '12345' name 'Smithing' and course number '1234', change course number to '4321'
+Expected Output: be met with course table with updated course
+Actual Output: met with course table with updated course
+
+### System Testing On Enrollments in course ###
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Press enrollment link on a course
+Description: Press enrollment link on existing course
+Expected Output: be met with enrollment table
+Actual Output: be met with enrollment table
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: enroll a student into the course
+Description: type dent.1 into add student and press enroll
+Expected Output: be met with dent.1 in enrollment table
+Actual Output: met with dent.1 in enrollment table
+
+### System Testing On Projects in course ###
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Press project link on a course
+Description: Press project link on a course
+Expected Output: be met with project table
+Actual Output: be met with project table
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Press new project link on projects page
+Description: press new project link on projects page
+Expected Output: be met with project form
+Actual Output: met with project form
+
+Author: Duytan Tran
+Date:7/29/2020
+Test: Create new project using project form
+Description: Create new project using project form and submit
+Expected Output: be met with project table with project
+Actual Output: met met with project table with project

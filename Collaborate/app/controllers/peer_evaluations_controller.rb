@@ -7,6 +7,7 @@ class PeerEvaluationsController < ApplicationController
   # Created 7/25/2020 by Caroline Wheeler
   # Provides new peer eval form with instance
   def new
+    @page_id = params[:page_id]
     @student_id = params[:student_id]
     @associated_id = params[:associated_id]
     @peer_evaluation = PeerEvaluation.new
@@ -29,8 +30,9 @@ class PeerEvaluationsController < ApplicationController
                                           associated_id: params[:associated_id],
                                           student_id: params[:student_id]
     if @peer_evaluation.save
-      Give.new(peer_evaluation_id: PeerEvaluation.order('created_at').last.id, student_id: current_account.id).save
-      redirect_to peer_evaluation_path params[:student_id]
+      Give.new(peer_evaluation_id: PeerEvaluation.order('created_at').last.id,
+               student_id: Student.find_by(account_id: current_account.id)).save
+      redirect_to peer_evaluation_path(params[:page_id], associated_id: params[:associated_id])
     else
       render :new
     end
@@ -41,6 +43,7 @@ class PeerEvaluationsController < ApplicationController
   # Gets all peer evals
   def index
     student_ids = ApartOf.where(group_id: params[:id]).pluck :student_id
+    @page_id = params[:id]
     @associated_id = params[:associated_id]
     @members = Student.where id: student_ids
   end

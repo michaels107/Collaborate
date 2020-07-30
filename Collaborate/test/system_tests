@@ -1,0 +1,65 @@
+Created 7/29/2020 by Sean Micahels
+Systems testing for Sean's code
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #1: Pages controller Redirect
+Description: Redirects if Account is a professor
+Expected Out: Redirects user to courses view for professor
+Actual Out: Redirected user to courses view for professor
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #2: Pages controller Redirect
+Description: Doesnt Redirect if Account is a student
+Expected Out: Doesnt Redirect if Account is a student
+Actual Out: Didn't Redirect, continued to student's portal
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #3: Finds information about student and their enrolled in classes
+Description: Finds information about student and their enrolled in classes
+Expected Out: Finds information about student and their enrolled in classes
+Actual Out: Found information about student and their enrolled in classes
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #4: Finds information about student and their groups
+Description: Finds information about student and their groups
+Expected Out: Finds information about student and their groups
+Actual Out: Found information about student and their groups
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #5: Finds information about student's project
+Description: Finds information about student's project
+Expected Out: Finds information about student's project
+Actual Out: Found information about student's project
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #6: pg code
+Description: finds the correct project for a group and puts them in a hash
+Expected Out: finds the correct project for a group and puts them in a hash
+Actual Out: Found the correct project for a group and puts them in a hash
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #7: pages view
+Description: Correctly displays the students portal in the student_home view
+Expected Out: Correctly displays the students portal in the student_home view
+Actual Out: Routed to corrected view and displayed correct information about the student
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #8: peer evaluation controller index
+Description: Correctly finds the students within a group
+Expected Out: Correctly finds the students within a group
+Actual Out: Correctly found the students within a group
+
+Author: Sean Michaels
+Date: 7/29/2020
+Test #9: peer evaluation index view
+Description: Correctly displays the members of a group and links correctly to their distinct peer eval
+Expected Out: Correctly displays the members of a group and links correctly to their distinct peer eval
+Actual Out: Correctly displayed the members of a group and linked correctly to their distinct peer eval

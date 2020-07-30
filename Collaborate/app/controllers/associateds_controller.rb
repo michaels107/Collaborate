@@ -15,14 +15,9 @@ class AssociatedsController < ApplicationController
 
   # Edited 7/29/2020 by Reema Gupta
   # method for deleting project from a group
-    def destroy
-      @associated = Associated.find_by(project_id: params[:project_id], group_id: params[:group_id])
-      @associated.destroy
-      redirect_to associated_path(params[:group_id])
-    end
-
-  def view_peer_evaluation
-    @peer_evaluations=PeerEvaaluation.where(associated_id: params[:id])
-    render 'peer_evaluations/show'
+  def destroy
+    @associated = Associated.find_by(project_id: params[:project_id], group_id: params[:group_id])
+    @associated.destroy
+    redirect_to associated_path(params[:group_id])
   end
-  end
+end

@@ -32,4 +32,11 @@ class PagesController < ApplicationController
     end
 
   end
+
+  # Edited 7/29/2020 by Reema Gupta
+  # method viewing peer evaluations for a group
+  def view_peer_evaluation
+    @peer_evaluations = PeerEvaluation.where(associated_id: params[:id])
+    render 'pages/show'
+  end
 end

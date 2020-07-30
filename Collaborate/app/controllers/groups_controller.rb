@@ -32,6 +32,7 @@ class GroupsController < ApplicationController
     @group =Group.new(params[:group])
     redirect_to group_path(@group.course_id) if @group.save
   end
+
   # Created 7/27/2020 by Reema Gupta
   # Provides edit group form with instance
   def update
@@ -39,6 +40,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     redirect_to group_path(@group.course_id) if @group.update(params[:group])
   end
+
   # Created 7/27/2020 by Reema Gupta
   # Prepares view for enrollments in a particular group
   def view_students_in_group
@@ -47,11 +49,12 @@ class GroupsController < ApplicationController
     @groups = Group.find(params[:id])
     render 'apart_ofs/show'
   end
+
   # Created 7/27/2020 by Reema Gupta
   # Prepares view for projects in a particular course
   def view_projects_in_group
-    project_ids=Associated.where(group_id: params[:id]).pluck :project_id
-    @projects=Project.where id:project_ids
+    project_ids = Associated.where(group_id: params[:id]).pluck :project_id
+    @projects = Project.where id: project_ids
     @groups = Group.find(params[:id])
     render 'associateds/show'
   end

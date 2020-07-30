@@ -31,7 +31,7 @@ class PeerEvaluationsController < ApplicationController
                                           student_id: params[:student_id]
     if @peer_evaluation.save
       Give.new(peer_evaluation_id: PeerEvaluation.order('created_at').last.id,
-               student_id: Student.find_by(account_id: current_account.id)).save
+               student_id: Student.find_by(account_id: current_account.id).id).save
       redirect_to peer_evaluation_path(params[:page_id], associated_id: params[:associated_id])
     else
       render :new

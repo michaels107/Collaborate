@@ -1,0 +1,26 @@
+<!-- Created 7/27/2020 by Reema Gupta
+     Edited 7/29/2020 by Duytan Tran: Properly prints peer information
+     HTML for displaying peer evaluation result-->
+<h1>Peer Evaluations</h1>
+<table>
+  <th>Reviewer</th>
+  <th>Reviewee</th>
+  <th>Attendance</th>
+  <th>Participation</th>
+  <th>Contribution</th>
+  <th>Time </th>
+  <th>General</th>
+  <th>Submission</th>
+  <% @peer_evaluations.order('created_at').each do |peer_evaluation| %>
+    <tr>
+      <td><%= Student.find(Give.find_by(peer_evaluation_id: peer_evaluation.id).student_id).dot_name %></td>
+      <td><%= Student.find(peer_evaluation.student_id).dot_name %></td>
+      <td><%= peer_evaluation.attendance %></td>
+      <td><%= peer_evaluation.participation%></td>
+      <td><%= peer_evaluation.contribution%></td>
+      <td><%= peer_evaluation.time%></td>
+      <td><%= peer_evaluation.general%></td>
+      <td><%= peer_evaluation.created_at%></td>
+    </tr>
+  <% end %>
+</table>

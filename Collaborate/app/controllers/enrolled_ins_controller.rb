@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Created 7/25/2020 by Duytan Tran
 # Controller for managing student enrollment in a particular course
 class EnrolledInsController < ApplicationController

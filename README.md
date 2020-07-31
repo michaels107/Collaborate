@@ -63,3 +63,8 @@ Collaborate is a peer evaluation submission web application that allows professo
 2. Run all of the model tests via terminal command:
 
     >bundle exec rake
+
+### Systems Testing
+1. Systems testing text files can be found in the folder:
+
+    >../Project-6-Quaranteam/Collaborate/test/system/

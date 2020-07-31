@@ -1,4 +1,5 @@
 <!-- Created 7/27/2020 by Reema Gupta
+     Edited 7/31/2020 by Duytan Tran: Made Add Project paragraph more clear
      HTML for projects in a particular group-->
 <h1>Projects for: <%= "(#{@groups.group_name}) " %></h1>
 <table>
@@ -21,7 +22,7 @@
   <% end %>
 </table>
 <%= form_with do |f| %>
-  <p>Add project(Project_name):</p>
+  <p>Add project (project name):</p>
   <%= f.text_field :project_name %>
   <%= f.submit 'Add Project'%>
 <% end %>

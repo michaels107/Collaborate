@@ -1,12 +1,11 @@
 # Created 7/27/2020 by Reema Gupta
 # Controller for the group page
-
 class GroupsController < ApplicationController
 
   # Created 7/27/2020 by Reema Gupta
   # Provides new group form with instance
   def new
-    @group=Group.new
+    @group = Group.new
     @group.course_id = params[:course_id]
   end
 
